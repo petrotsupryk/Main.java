@@ -26,16 +26,18 @@ public class Main {
         }
         // знайти номер стовбця у якому сума чисел є найменшою
         int sum = 0;
-      int min=0;
+        int min = 0;
 
         for (int i = 0; i < m; i++) {
-            sum = IntStream.of(Matrix[i]).sum();
-            if (sum < min)
-                min = Arrays.stream(Matrix[i]).sum();
-
-//            System.out.print("sum=" + sum);
-//            System.out.println();
+            for (int j = 0; j < n; j++) {
+                sum += Matrix[i][j];
+            }
+            System.out.println("Suma elementiv " + i + " ryadka " + sum);
         }
-        System.out.println("min=" + min);
+        if (sum < min)
+            min = sum;
+        System.out.println("Sum min " + sum);
     }
+
 }
+
