@@ -37,8 +37,9 @@ public class Main {
                 columnSum += Matrix[j][i];
             }
 
-            if (sum > columnSum) {
+            if (sum > columnSum || minSumColumnIndex == 0) {
                 minSumColumnIndex = i;
+                sum = columnSum;
             }
         }
 
